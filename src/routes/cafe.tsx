@@ -5,9 +5,9 @@ import { validateMenuSearch } from "@/lib/menu-data";
 export const Route = createFileRoute("/cafe")({
   validateSearch: validateMenuSearch,
   head: () => ({ meta: [
-    { title: "Santo Antônio Pães & Pizzas | Café, sucos & bebidas" },
-    { name: "description", content: "Sucos, refrigerantes e pães de queijo na Santo Antônio Pães & Pizzas. Descubra as combinações para uma pausa com mais sabor." },
-    { property: "og:title", content: "Santo Antônio Pães & Pizzas | Café, sucos & bebidas" },
+    { title: "Pão & Gourmet | Café, sucos & bebidas" },
+    { name: "description", content: "Sucos, refrigerantes e pães de queijo na Pão & Gourmet. Descubra as combinações para uma pausa com mais sabor." },
+    { property: "og:title", content: "Pão & Gourmet | Café, sucos & bebidas" },
     { property: "og:description", content: "Uma pausa com mais sabor: sucos frescos, bebidas geladas e pães de queijo." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },

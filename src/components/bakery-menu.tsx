@@ -1,9 +1,10 @@
+import logo from "@/assets/pao-gourmet-logo.jpg";
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, Wheat, ChefHat, Heart, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-import { categories, products, pageContent, pizzaPhotos, formatPrice, type MenuStyle, type PageKind, type Category, type Product } from "@/lib/menu-data";
+import { categories, products, pageContent, formatPrice, type MenuStyle, type PageKind, type Category, type Product } from "@/lib/menu-data";
 
 type Props = { page: PageKind; style: MenuStyle; onStyleChange: (style: MenuStyle) => void };
 const proposals: { value: MenuStyle; label: string; number: string }[] = [
@@ -23,16 +24,16 @@ export function BakeryMenu({ page, style, onStyleChange }: Props) {
     <div className="bakery" data-style={style}>
       <div className="preview-bar">
         <div className="container preview-inner">
-          <span className="preview-label">Santo Antônio Pães & Pizzas · Coleção de cardápios</span>
+          <span className="preview-label">Pão & Gourmet · Coleção de cardápios</span>
           <div className="style-picker" aria-label="Proposta visual">
             {proposals.map((proposal) => <Button key={proposal.value} variant="quiet" className="style-control" aria-pressed={style === proposal.value} onClick={() => onStyleChange(proposal.value)}><span className="style-dot" />{proposal.number} {proposal.label}</Button>)}
           </div>
         </div>
       </div>
       <header className="container masthead">
-        <Link to="/" search={{ style }} className="wordmark" aria-label="Santo Antônio Pães & Pizzas — início"><span className="wordmark-name">Santo Antônio</span><span className="wordmark-sub">Pães & Pizzas</span></Link>
+        <Link to="/" search={{ style }} className="wordmark" aria-label="Pão & Gourmet — início"><img src={logo} alt="Pão & Gourmet — Padaria e Confeitaria" width={64} height={64} className="brand-logo" /></Link>
         <nav className="main-nav" aria-label="Cardápios">
-          <Link to="/" search={{ style }} data-active={page === "bakery"}>Pães & pizzas</Link>
+          <Link to="/" search={{ style }} data-active={page === "bakery"}>Panificação</Link>
           <Link to="/confeitaria" search={{ style }} data-active={page === "cakes"}>Confeitaria</Link>
           <Link to="/cafe" search={{ style }} data-active={page === "cafe"}>Café & bebidas</Link>
         </nav>
@@ -44,7 +45,7 @@ export function BakeryMenu({ page, style, onStyleChange }: Props) {
           <img src={content.image} className="hero-image" alt={content.imageAlt} width={1536} height={1024} fetchPriority="high" />
           <div className="container hero-content">
             <div className="eyebrow">{content.eyebrow}</div>
-            <h1>Santo Antônio<span className="hero-brand-sub">Pães & Pizzas<span className="text-primary">.</span></span></h1>
+            <h1>Pão & Gourmet<span className="text-primary">.</span></h1>
             <p className="hero-subtitle">{content.subtitle}</p>
             <p className="hero-description">{content.description}</p>
             <Button variant="bakery" className="hero-button" onClick={scrollToMenu}>Explore nosso cardápio <ArrowRight /></Button>
@@ -58,19 +59,11 @@ export function BakeryMenu({ page, style, onStyleChange }: Props) {
           <div className="quality-item"><Heart /><span>Sabor que faz parte do seu dia</span></div>
         </div></div>
 
-        <section className="container pizza-section" aria-labelledby="pizza-title">
-          <div className="section-heading">
-            <div><p className="section-kicker">Pães & pizzas</p><h2 id="pizza-title">Sabor para compartilhar<span className="text-primary">.</span></h2></div>
-          </div>
-          <div className="pizza-gallery">
-            {pizzaPhotos.map((photo) => <img key={photo.image} src={photo.image} alt={photo.alt} loading="lazy" width={1536} height={1024} />)}
-          </div>
-        </section>
 
         <section className="container menu-section" id="cardapio">
           <div className="section-heading">
             <div><p className="section-kicker">{content.kicker}</p><h2>{content.menuTitle}<span className="text-primary">.</span></h2></div>
-            <p className="section-note">Do primeiro café ao último pedaço.<br />Encontre o seu sabor na Santo Antônio Pães & Pizzas.</p>
+            <p className="section-note">Do primeiro café ao último pedaço.<br />Encontre o seu sabor na Pão & Gourmet.</p>
           </div>
           <div className="category-tabs" aria-label="Categorias de produtos">
             {categories.map((item) => <Button key={item} variant="quiet" className="category-tab" aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</Button>)}
@@ -87,7 +80,7 @@ export function BakeryMenu({ page, style, onStyleChange }: Props) {
           <p className="menu-disclaimer">Cardápio demonstrativo · Produtos, fotos e preços ilustrativos. Consulte a disponibilidade na loja.</p>
         </section>
       </main>
-      <footer className="footer"><div className="container footer-inner"><span className="footer-brand">Santo Antônio Pães & Pizzas<span className="text-primary">.</span></span><span className="footer-copy">Pães, pizzas & confeitaria · Feito com carinho, servido com sabor.</span><span className="footer-copy">© {new Date().getFullYear()} Santo Antônio Pães & Pizzas</span></div></footer>
+      <footer className="footer"><div className="container footer-inner"><span className="footer-brand">Pão & Gourmet<span className="text-primary">.</span></span><span className="footer-copy">Pães & confeitaria · Feito com carinho, servido com sabor.</span><span className="footer-copy">© {new Date().getFullYear()} Pão & Gourmet</span></div></footer>
       <Dialog open={selected !== null} onOpenChange={(open) => { if (!open) setSelected(null); }}>
         <DialogContent className="detail-content">
           {selected && <>

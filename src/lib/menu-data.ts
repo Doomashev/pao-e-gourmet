@@ -2,14 +2,6 @@ import bread from "@/assets/bakery.jpg";
 import cake from "@/assets/cake.jpg";
 import cheeseBread from "@/assets/cheese-bread.jpg";
 import juice from "@/assets/juice.jpg";
-import pizzaHero from "@/assets/pizza-hero.jpg";
-import pizzaMargherita from "@/assets/pizza-margherita.jpg";
-
-export const pizzaPhotos = [
-  { image: pizzaHero, alt: "Pizza artesanal com queijo, pepperoni e manjericão" },
-  { image: pizzaMargherita, alt: "Pizza margherita com mozzarella, tomate e manjericão fresco" },
-];
-
 export const styles = ["classic", "editorial", "contemporary"] as const;
 export type MenuStyle = (typeof styles)[number];
 export type PageKind = "bakery" | "cakes" | "cafe";
@@ -39,7 +31,7 @@ export const products: Product[] = [
   { id: "refrigerante-laranja", name: "Refrigerante de laranja", category: "Refrigerantes", description: "Sabor cítrico e refrescante.", price: 6.5, unit: "lata 350 ml" },
 ];
 export const pageContent = {
-  bakery: { label: "Pães & pizzas", subtitle: "O sabor de fazer à mão.", eyebrow: "Pães & pizzas · Feito com carinho", description: "Pães artesanais, pizzas e receitas que acolhem. Sabor para compartilhar em todos os momentos.", image: pizzaHero, imageAlt: "Pizza artesanal com queijo e pepperoni ao lado de pães rústicos", menuTitle: "Nosso cardápio", kicker: "Escolha seu momento favorito", number: "01", defaultCategory: "Todos" as Category },
+  bakery: { label: "Panificação", subtitle: "O sabor de fazer à mão.", eyebrow: "Panificação · Feito com carinho", description: "Pães artesanais e receitas que acolhem. Sabor para compartilhar em todos os momentos.", image: bread, imageAlt: "Pães artesanais de fermentação natural", menuTitle: "Nosso cardápio", kicker: "Escolha seu momento favorito", number: "01", defaultCategory: "Todos" as Category },
   cakes: { label: "Confeitaria", subtitle: "Um pedaço de felicidade.", eyebrow: "Confeitaria · Delicadeza em cada receita", description: "Do chocolate intenso ao bolo caseiro. Sabores que transformam qualquer pausa em celebração.", image: cake, imageAlt: "Bolo de chocolate com cobertura cremosa", menuTitle: "Nossa confeitaria", kicker: "Doce na medida certa", number: "02", defaultCategory: "Bolos" as Category },
   cafe: { label: "Café & bebidas", subtitle: "Uma pausa com mais sabor.", eyebrow: "Sucos & lanches · Feito com carinho", description: "Um suco fresquinho, pão de queijo quentinho e tudo que combina com uma boa pausa.", image: juice, imageAlt: "Suco de laranja natural e frutas frescas", menuTitle: "Sua pausa favorita", kicker: "Frescor para acompanhar", number: "03", defaultCategory: "Sucos" as Category },
 };

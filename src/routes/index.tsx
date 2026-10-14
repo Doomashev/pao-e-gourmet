@@ -5,10 +5,10 @@ import { validateMenuSearch } from "@/lib/menu-data";
 export const Route = createFileRoute("/")({
   validateSearch: validateMenuSearch,
   head: () => ({ meta: [
-    { title: "Santo Antônio Pães & Pizzas | Pães, pizzas & cardápio artesanal" },
-    { name: "description", content: "Explore o cardápio da Santo Antônio Pães & Pizzas: pizzas, pães artesanais, bolos, pães de queijo e bebidas. Sabores para todos os momentos." },
-    { property: "og:title", content: "Santo Antônio Pães & Pizzas | Pães, pizzas & cardápio artesanal" },
-    { property: "og:description", content: "Pizzas, pães artesanais, receitas que acolhem e pequenos prazeres para todos os dias." },
+    { title: "Pão & Gourmet | Pães & cardápio artesanal" },
+    { name: "description", content: "Explore o cardápio da Pão & Gourmet: pães artesanais, bolos, pães de queijo e bebidas. Sabores para todos os momentos." },
+    { property: "og:title", content: "Pão & Gourmet | Pães & cardápio artesanal" },
+    { property: "og:description", content: "Pães artesanais, receitas que acolhem e pequenos prazeres para todos os dias." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }),

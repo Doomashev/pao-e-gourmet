@@ -77,9 +77,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--primary); }
 .hero h1 { margin: 15px 0 0; font: 72px/1.05 var(--font-display); }
 .hero-brand-sub { display: block; margin-top: 8px; font-size: 42px; }
-.pizza-section { padding-top: 48px; }
-.pizza-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; }
-.pizza-gallery img { width: 100%; aspect-ratio: 1.65; object-fit: cover; border-radius: 4px; }
 .hero-subtitle { margin: 10px 0 20px; font: italic 32px/1.4 var(--font-display); }
 .hero-description { max-width: 330px; font-size: 12px; line-height: 1.9; opacity: .76; margin: 0 0 28px; }
 .hero-button { height: 44px; border-radius: 4px; padding-inline: 23px; font-size: 11px; }
@@ -191,3 +188,4 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } }
+.brand-logo {width:64px;height:64px;border-radius:50%;object-fit:cover}
